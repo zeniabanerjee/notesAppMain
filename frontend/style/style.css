@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+body {
+  background: #2c2c2c !important;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-size: 1rem !important;
+}
+.flex-prop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* loading animation */
+.flex-prop {
+  animation-name: loading-animation;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  transition: all 0.5s;
+  overflow: visible;
+}
+@keyframes loading-animation {
+  0% {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  25% {
+    justify-content: start;
+  }
+  50% {
+    justify-content: flex-end;
+    transform: rotate(360deg);
+    filter: blur(40px);
+  }
+  75% {
+    justify-content: space-around;
+  }
+  100% {
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+/*  loading animation  */
+
+.all-notes {
+  z-index: 1;
+}
+.update-container {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(20px);
+  z-index: 3000;
+  display: none;
+}
+.delete-pop-up {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.362);
+  backdrop-filter: blur(20px);
+  z-index: 3000;
+  display: none;
+}
+#confirm-delete {
+  display: none;
+}
+.custom {
+  width: 15rem;
+  background-color: #ffd502 !important;
+  top: 1rem;
+  left: 2rem;
+}
+.buttons {
+  background-color: #f9e2af;
+  border-radius: 10px;
+  border: 1px solid rgb(13, 2, 38);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+.buttons:hover {
+  scale: 1.1;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  background-color: #dca116;
+}
+
+#createNote {
+  color: white;
+  padding: 0.6rem;
+  background-color: transparent;
+  border: 10px solid #2c2c2c;
+  border-radius: 1rem;
+}
+#createNote input,
+#createNote textarea {
+  color: white;
+  border: 0;
+  border-bottom: 2px solid #2c2c2c;
+  background-color: transparent;
+}
+#createNote input:focus,
+#createNote textarea:focus {
+  outline: none;
+}
+#createNote input::placeholder,
+#createNote textarea::placeholder {
+  color: white;
+}
+
+#plusBtn {
+  position: absolute;
+  margin-top: 3%;
+  right: 5%;
+  font-size: 3.5rem;
+  color: #f9e2af;
+  transition: 0.5s;
+}
+
+#plusBtn:hover {
+  color: #ffdd8c !important;
+  animation-name: plus-btn-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes plus-btn-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.notes {
+  width: 25rem;
+}
+#noteContent {
+  height: 5rem;
+}
+.note-lists {
+  flex-direction: column-reverse;
+  position: relative;
+}
+.note-items {
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  z-index: 1;
+}
+.notes {
+  display: none;
+}
+.item {
+  flex-direction: column;
+  position: relative;
+  border-radius: 10px;
+  padding: 2% 3%;
+  gap: 0.3rem;
+  backdrop-filter: opacity(0.5) !important;
+  height: 10rem;
+  width: 20rem;
+  box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, 0.75);
+}
+.item:hover {
+  background: #ffffff !important;
+}
+#addNoteSec {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.362);
+  backdrop-filter: blur(20px);
+  z-index: 3000;
+}
+.list-item {
+  height: 5rem;
+  overflow-y: scroll;
+}
+@media screen and (min-width: 820px) {
+  .item {
+    height: 15rem;
+  }
+  .note-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #plusBtn {
+    font-size: 4rem;
+    margin-top: 2%;
+    right: 10%;
+  }
+}
